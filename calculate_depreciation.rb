@@ -35,15 +35,13 @@ def calculate_depreciation other_asset
     # puts "#{e.class} - #{e.inspect}"
     return
   end
-  samanage_id = other_asset.dig('id'),
+
   asset_name = other_asset.dig('name'),
-  asset_tag = other_asset.dig('asset_id'),
   cost = custom_fields.find_custom_field_value('Cost')
   asset_life = custom_fields.find_custom_field_value('Asset Life')
   return unless cost && asset_life # return if there is no cost or Assef Life
+  
   depreciation_expense =  sprintf("%.2f",cost.to_f / (asset_life.to_i * 12)).to_f
-  
-  
   months_passed = (current_date.year * 12 + current_date.month) - (purchase_date.year * 12 + purchase_date.month)
   if months_passed >= asset_life.to_i * 12
     new_depreciation_values = {
