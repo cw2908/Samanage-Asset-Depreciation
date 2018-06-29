@@ -2,7 +2,7 @@
 
 ### To Run
  
-  - Install Ruby 2.3
+  - Install Ruby 2.3+
   - Install Samanage gem: `gem install samanage`
   - Run the command: `ruby calculate_depreciation.rb API_TOKEN` to calculate new depreciation (`ruby calculate_depreciation.rb API_TOKEN eu` for the European database)
 
