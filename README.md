@@ -15,7 +15,7 @@
   cost = 12000
   purchase_date = Date.parse('2018-01-01')
   asset_life = 2 # Asset Life in Years
-  current_date = Date.parse('2018-01-01')
+  current_date = Date.parse('2018-06-01')
 
 
 # Output
