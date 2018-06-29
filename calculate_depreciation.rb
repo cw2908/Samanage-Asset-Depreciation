@@ -25,7 +25,6 @@ end
 
 
 def calculate_depreciation other_asset
-  # Collect values for computation from Hash and avoid mutating self
   current_date = Date.today
   custom_fields = other_asset.dig('custom_fields_values')
   begin
