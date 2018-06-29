@@ -1,5 +1,4 @@
 require 'samanage'
-require 'csv'
 
 api_token = ARGV[0]
 unless api_token 
