@@ -1,11 +1,12 @@
 require 'samanage'
 
 api_token = ARGV[0]
+datacenter = ARGV[1]
 unless api_token 
   puts "Please enter an API Token\n\n\n> ruby calculate_depreciation.rb SAMANAGE_API_TOKEN"
   exit
 end
-@samanage = Samanage::Api.new(token: api_token)
+@samanage = Samanage::Api.new(token: api_token, datacenter: datacenter)
 
 
 class Array
