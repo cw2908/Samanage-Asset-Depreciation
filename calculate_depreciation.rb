@@ -10,8 +10,8 @@ end
 
 
 class Array
-  # Select custom field by name
-  def find_custom_field name
+  # Select custom field value by name
+  def find_custom_field_value name
     self.select{ |field| field['name'] == name }.first.to_h.dig('value')
   end
 end
@@ -19,7 +19,7 @@ end
 class String
   # Format commas
   def format_number
-    self.to_s.reverse.gsub(/\d{3}(?=.)/,'\&,').reverse
+    self.reverse.gsub(/\d{3}(?=.)/,'\&,').reverse
   end
 end
 
@@ -29,7 +29,7 @@ def calculate_depreciation other_asset
   current_date = Date.today
   custom_fields = other_asset.dig('custom_fields_values')
   begin
-    purchase_date = Date.parse(custom_fields.find_custom_field('Purchase Date'))
+    purchase_date = Date.parse(custom_fields.find_custom_field_value('Purchase Date'))
   rescue => e
     # Return if there is no purchase date
     # puts "#{e.class} - #{e.inspect}"
@@ -38,8 +38,8 @@ def calculate_depreciation other_asset
   samanage_id = other_asset.dig('id'),
   asset_name = other_asset.dig('name'),
   asset_tag = other_asset.dig('asset_id'),
-  cost = custom_fields.find_custom_field('Cost')
-  asset_life = custom_fields.find_custom_field('Asset Life')
+  cost = custom_fields.find_custom_field_value('Cost')
+  asset_life = custom_fields.find_custom_field_value('Asset Life')
   return unless cost && asset_life # return if there is no cost or Assef Life
   depreciation_expense =  sprintf("%.2f",cost.to_f / (asset_life.to_i * 12)).to_f
   
