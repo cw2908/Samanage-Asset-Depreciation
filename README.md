@@ -1,7 +1,7 @@
 # Asset Depreciation Script
 
 #### Before you start
-This script is an example provided and is not designed to work in every use case without some modification to the script itself. These script is not supported by Samanage or covered by Master Subscription Agreement. 
+This script is an example provided and is not designed to work in every use case without some modification to the script itself. This script is not supported by Samanage or covered by Master Subscription Agreement. 
 
 
 
